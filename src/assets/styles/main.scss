@@ -1,0 +1,15 @@
+//* Setup
+@import 'setup/variables';
+
+//*basics
+@import 'basics/base';
+@import 'basics/layout';
+
+//*cmps
+
+@import 'cmps/book-details';
+@import 'cmps/wish-list';
+
+//*pages
+
+@import 'pages/book-index';

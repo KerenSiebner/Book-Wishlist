@@ -1,0 +1,71 @@
+.book-details-container {
+  width: 350px;
+  text-align: left;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: rgba(128, 128, 128, 0.342) 2px 3px 18px 0px;
+  .book-details-header {
+    display: flex;
+    justify-content: space-between;
+
+    input[type="checkbox"] {
+      position: absolute;
+      left: 390px;
+      top: 82px;
+      cursor: pointer;
+    }
+    input[type="checkbox"]:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 0;
+      left: 0;
+      border-color: transparent;
+      border-radius: 3px;
+      box-shadow: inset 2px 3px 5px #888, 0 1px 1px #888;
+      padding: 5px;
+      text-align: center;
+      background-color: rgb(219, 213, 213);
+    }
+    input[type="checkbox"]:checked:after {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 10px;
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      top: 5px;
+      left: 10px;
+    }
+  }
+  .book-desc {
+    width: 308px;
+    height: 150px;
+    overflow: scroll;
+    overflow-x: hidden;
+    line-height: 1.8em;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: #888;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+}

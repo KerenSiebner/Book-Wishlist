@@ -1,0 +1,15 @@
+.book-index-container {
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+
+  .arrow-btn {
+    border: none;
+    background-color: transparent;
+    .nav-arrow {
+      color: grey;
+      font-size: 2em;
+      font-weight: 100;
+    }
+  }
+}
