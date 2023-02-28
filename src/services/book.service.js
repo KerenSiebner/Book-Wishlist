@@ -5,6 +5,7 @@ export const bookService = {
   getSelectedBooks,
   getSelectedBookIdx,
   removeBookFromWishList,
+  updateBookRating
 }
 
 const selectedBooks = []
@@ -126,4 +127,10 @@ function getSelectedBookIdx(book) {
   return selectedBooks.findIndex(
     (selectedBook) => selectedBook.title === book.title
   )
+}
+
+function updateBookRating(updateBookRating, bookToUpdate) {
+  bookToUpdate = { ...bookToUpdate, rating: updateBookRating }
+  const idx = books.findIndex((book) => book.title === bookToUpdate.title)
+  books.splice(idx, 1, bookToUpdate)
 }

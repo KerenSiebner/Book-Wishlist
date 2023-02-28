@@ -1,36 +1,32 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { HiStar } from 'react-icons/hi'
+import { HiOutlineStar } from 'react-icons/hi'
 
 const Star = ({ marked, starId }) => {
   return (
     <span data-star-id={starId} className="star" role="button">
-      {marked ? "\u2605" : "\u2606"}
+      {marked ? "⭐️" : "\u2606"}
+      {/* {marked ? <HiStar className="star yellow"/> : <HiOutlineStar className="star"/>} */}
     </span>
   )
 }
 
-export function StarRating({ value }) {
-  const [rating, setRating] = useState(parseInt(value) || 0)
-  const [selection, setSelection] = useState(0)
+export function StarRating({ book, onUpdateBookRating }) {
 
-  const hoverOver = (event) => {
-    let val = 0
-    if (event && event.target && event.target.getAttribute("data-star-id"))
-      val = event.target.getAttribute("data-star-id")
-    setSelection(val)
+  function handleClick(e){
+    const updatedRating = e.target.getAttribute("data-star-id") || book.rating
+    onUpdateBookRating(updatedRating)
   }
+
   return (
     <div
-      onMouseOut={() => hoverOver(null)}
-      onClick={(e) =>
-        setRating(e.target.getAttribute("data-star-id") || rating)
-      }
-    //   onMouseOver={hoverOver}
+      onClick={ handleClick }
     >
       {Array.from({ length: 5 }, (v, i) => (
         <Star
           starId={i + 1}
           key={`star_${i + 1}`}
-          marked={selection ? selection >= i + 1 : rating >= i + 1}
+          marked={book.rating >= i + 1}
         />
       ))}
     </div>

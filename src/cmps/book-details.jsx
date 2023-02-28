@@ -1,16 +1,22 @@
+import { useEffect, useState } from "react"
 import { bookService } from "../services/book.service"
-import { SlStar } from 'react-icons/sl'
 import { StarRating } from "./start-rating"
 
-export function BookDetails({ book, bookSelectToggle, isChecked }) {
+export function BookDetails({ book, bookSelectToggle, isChecked , onUpdateBookRating, bookRating }) {
+  // function getStars() {
+  //   let stars = ''
+  //   for (let i = 0; i < Math.round(book.rating); i++) {
+  //     stars += '<SlStar className="star"/>'
+  //   }
+  //   return stars
+  // }
 
-  function getStars() {
-    let stars = ''
-    for (let i = 0; i < Math.round(book.rating); i++) {
-      stars += '<SlStar className="star"/>'
-    }
-    return stars
-  }
+  // useEffect(()=>{
+  //   setRating(parseInt(rating) || 0)
+  // },[rating])
+
+
+
   return (
     <div className="book-details-container">
       <span className="book-details-header">
@@ -22,7 +28,7 @@ export function BookDetails({ book, bookSelectToggle, isChecked }) {
       <h4 className="book-desc">{book.description}</h4>
       {/* <h5>Rating:<span dangerouslySetInnerHTML={{__html: {getStars}}}></span></h5> */}
       {/* <h5>Rating:     <SlStar className="star"/><SlStar className="star"/><SlStar className="star"/><SlStar className="star"/><SlStar className="star"/></h5> */}
-      <div className="rating"><h5>Rating:</h5>  <StarRating /></div>
+      <div className="rating"><h5>Rating:</h5>  <StarRating book={book} onUpdateBookRating={onUpdateBookRating} /></div>
       <h5>Price: $ {book.price}</h5>
     </div>
   )

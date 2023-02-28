@@ -9,9 +9,9 @@ export function BookIndex() {
   const [idx, setIdx] = useState(0)
   const [book, setBook] = useState(bookService.getBookByIdx(0))
   const [isChecked, setIsChecked] = useState("")
-  const [selectedBooks, setSelectedBooks] = useState(
-    bookService.getSelectedBooks()
-  )
+  const [selectedBooks, setSelectedBooks] = useState(bookService.getSelectedBooks())
+  // const [bookRating, setBookRating] = useState(book.rating || 0)
+
 
   function bookSelectToggle(ev, selectedBook) {
     if (ev.target.checked) {
@@ -27,7 +27,7 @@ export function BookIndex() {
     const updatedSelectedBooks =
       bookService.removeBookFromWishList(bookToRemove)
     console.log("updatedSelectedBooks", updatedSelectedBooks)
-    setSelectedBooks(updatedSelectedBooks)
+    setSelectedBooks([...updatedSelectedBooks])
     if (bookToRemove === book) setIsChecked("")
   }
 
@@ -47,9 +47,18 @@ export function BookIndex() {
 
   function setCurrBookDisplay(index, currBook) {
     setIdx(index)
-    setBook(currBook)
+    console.log('currBook', currBook)
+    setBook({...currBook})
+    // setBookRating(book.rating || 0)
     if (bookService.getSelectedBookIdx(currBook) === -1) setIsChecked("")
     else setIsChecked("checked")
+  }
+
+  function onUpdateBookRating(updatedRating) {
+    bookService.updateBookRating(updatedRating, book)
+    // setBookRating(updatedRating)
+    // const updatedBook = {...book, rating: updatedRating}
+    setBook((prevBook) => { return { ...prevBook, rating: updatedRating } })
   }
 
   return (
@@ -62,6 +71,8 @@ export function BookIndex() {
         book={book}
         bookSelectToggle={bookSelectToggle}
         isChecked={isChecked}
+        onUpdateBookRating={onUpdateBookRating}
+      // bookRating={book.rating}
       />
       <button onClick={nextBook} className="arrow-btn">
         {" "}
