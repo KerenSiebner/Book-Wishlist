@@ -4,6 +4,9 @@
   padding: 20px 30px;
   background-color: #fff;
   box-shadow: rgba(128, 128, 128, 0.342) 2px 3px 18px 0px;
+  @media (max-width: 600px) {
+    width: 300px;
+  }
   .book-details-header {
     display: flex;
     justify-content: space-between;
@@ -19,6 +22,9 @@
       left: 425px;
       top: 82px;
       cursor: pointer;
+      @media (max-width: 600px) {
+        left: 279px;
+      }
     }
     input[type="checkbox"]:before {
       content: "";
@@ -88,6 +94,16 @@
     align-items: center;
     h5 {
       margin-right: 8px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .book-details-header {
+    .book-details-container {
+      input[type="checkbox"] {
+        left: 279px;
+      }
     }
   }
 }

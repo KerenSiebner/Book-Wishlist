@@ -3,14 +3,27 @@
   flex-direction: row;
   padding: 50px;
 
-  .arrow-btn {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    .nav-arrow {
-      color: grey;
-      font-size: 2em;
-      font-weight: 100;
+  .book-details-section {
+    display: flex;
+    .arrow-btn {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      .nav-arrow {
+        color: grey;
+        font-size: 2em;
+        font-weight: 100;
+      }
     }
+  }
+}
+
+@media (max-width: 600px){
+  .book-index-container {
+    flex-direction: column;
+    align-items: center;
+  } 
+  .book-details-section {
+    margin-bottom: 50px
   }
 }

@@ -48,7 +48,7 @@ export function BookIndex() {
   function setCurrBookDisplay(index, currBook) {
     setIdx(index)
     console.log('currBook', currBook)
-    setBook({...currBook})
+    setBook({ ...currBook })
     // setBookRating(book.rating || 0)
     if (bookService.getSelectedBookIdx(currBook) === -1) setIsChecked("")
     else setIsChecked("checked")
@@ -63,21 +63,23 @@ export function BookIndex() {
 
   return (
     <div className="book-index-container">
-      <button onClick={prevBook} className="arrow-btn">
-        {" "}
-        <SlArrowLeft className="nav-arrow" />{" "}
-      </button>
-      <BookDetails
-        book={book}
-        bookSelectToggle={bookSelectToggle}
-        isChecked={isChecked}
-        onUpdateBookRating={onUpdateBookRating}
-      // bookRating={book.rating}
-      />
-      <button onClick={nextBook} className="arrow-btn">
-        {" "}
-        <SlArrowRight className="nav-arrow" />{" "}
-      </button>
+      <section className="book-details-section">
+        <button onClick={prevBook} className="arrow-btn">
+          {" "}
+          <SlArrowLeft className="nav-arrow" />{" "}
+        </button>
+        <BookDetails
+          book={book}
+          bookSelectToggle={bookSelectToggle}
+          isChecked={isChecked}
+          onUpdateBookRating={onUpdateBookRating}
+        // bookRating={book.rating}
+        />
+        <button onClick={nextBook} className="arrow-btn">
+          {" "}
+          <SlArrowRight className="nav-arrow" />{" "}
+        </button>
+      </section>
       <WishList
         selectedBooks={selectedBooks}
         removeBookFromWishlist={removeBookFromWishlist}
