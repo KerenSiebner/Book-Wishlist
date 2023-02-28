@@ -7,6 +7,12 @@
   .book-details-header {
     display: flex;
     justify-content: space-between;
+    h1 {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 90%;
+    }
 
     input[type="checkbox"] {
       position: absolute;
@@ -69,18 +75,18 @@
     border-radius: 5px;
   }
 
-  .star{
+  .star {
     font-size: 1.2em;
     margin: 0 1px;
-    &.yellow{
-        background-color: yellow;
+    &.yellow {
+      background-color: yellow;
     }
   }
-  .rating{
+  .rating {
     display: flex;
     align-items: center;
-    h5{
-        margin-right: 8px;
+    h5 {
+      margin-right: 8px;
     }
   }
 }

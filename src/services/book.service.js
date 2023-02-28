@@ -5,14 +5,14 @@ export const bookService = {
   getSelectedBooks,
   getSelectedBookIdx,
   removeBookFromWishList,
-};
+}
 
-const selectedBooks = [];
+const selectedBooks = []
 const books = [
   {
     title: "Sea of Death",
     description:
-      "Written in 1936 when Amado was twenty-four years old, Sea of Death tells the dockside tales of Bahia. Sailors and their wives, steeped in the rich mythology surrounding the goddess Iemanj?, are at the heart of this novel, a lyrical and tragic portrayal of the workers� daily struggle for survival. Sea of Death narrates the story of Guma and L?via, lovers whose triumphs and tribulations mirror the dark imperatives of the world around them.",
+      "Written in 1936 when Amado was twenty-four years old, Sea of Death tells the dockside tales of Bahia. Sailors and their wives, steeped in the rich mythology surrounding the goddess Iemanj, are at the heart of this novel, a lyrical and tragic portrayal of the workers' daily struggle for survival. Sea of Death narrates the story of Guma and Lvia, lovers whose triumphs and tribulations mirror the dark imperatives of the world around them.",
     rating: "4.2",
     author: "Jorge Amado",
     price: "16.35",
@@ -20,7 +20,7 @@ const books = [
   {
     title: "The Day Lasts More than a Hundred Years",
     description:
-      "Set in the vast windswept Central Asian steppes and the infinite reaches of galactic space, this powerful novel offers a vivid view of the culture and values of the Soviet Union�s Central Asian peoples.",
+      "Set in the vast windswept Central Asian steppes and the infinite reaches of galactic space, this powerful novel offers a vivid view of the culture and values of the Soviet Union's Central Asian peoples.",
     rating: "4.5",
     author: "Chingiz Aitmatov",
     price: "24",
@@ -44,7 +44,7 @@ const books = [
   {
     title: "Only a Whisper",
     description:
-      "Called in the night to transcribe the bedridden confession of a dying man, federal agent Rae Phillips lost her heart to a voice in the darkness, a hero whose face she never saw�",
+      "Called in the night to transcribe the bedridden confession of a dying man, federal agent Rae Phillips lost her heart to a voice in the darkness, a hero whose face she never saw'",
     rating: "2.1",
     author: "Gayle Wilson",
     price: "2.78",
@@ -75,7 +75,7 @@ const books = [
   {
     title: "The Yiddish Policemen's Union Kindle Edition",
     description:
-      "Set in the Jewish homeland of � Alaska, this is a brilliantly original novel from Michael Chabon, author of THE ADVENTURES OF KAVALIER & CLAY and WONDER BOYS.",
+      "Set in the Jewish homeland of ' Alaska, this is a brilliantly original novel from Michael Chabon, author of THE ADVENTURES OF KAVALIER & CLAY and WONDER BOYS.",
     rating: "3.7",
     author: "Michael Chabon",
     price: "21.33",
@@ -96,34 +96,34 @@ const books = [
     author: "Lynda Lippman-Lockhart",
     price: "17.5",
   },
-];
+]
 
 function getBookByIdx(idx) {
-  console.log("books", books);
-  return books[idx];
+  console.log("books", books)
+  return books[idx]
 }
 
 function getBooksAmount() {
-  return books.length;
+  return books.length
 }
 
 function addBookToWishList(book) {
-  selectedBooks.push(book);
+  selectedBooks.push(book)
 }
 
 function removeBookFromWishList(book) {
-  const bookIdx = selectedBooks.findIndex(
-    (selectedBook) => selectedBook.title === book.title
-  );
-  selectedBooks.splice(bookIdx, 1);
+  const bookIdx = selectedBooks.findIndex((selectedBook) => selectedBook.title === book.title)
+  selectedBooks.splice(bookIdx, 1)
+  console.log("selectedBooks", selectedBooks)
+  return selectedBooks
 }
 
 function getSelectedBooks() {
-  return selectedBooks;
+  return selectedBooks
 }
 
 function getSelectedBookIdx(book) {
   return selectedBooks.findIndex(
     (selectedBook) => selectedBook.title === book.title
-  );
+  )
 }

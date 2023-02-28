@@ -1,26 +1,36 @@
 .wish-list-container {
   margin-left: 50px;
-  li {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 15px;
-    width: 300px;
-    background-color: #fff;
-    box-shadow: rgba(128, 128, 128, 0.342) 2px 3px 18px 0px;
-    margin-bottom: 20px;
-    border-left: 15px solid orange;
-    text-align: left;
-    button {
-      border: none;
-      width: 35px;
-      height: 33px;
-      border-radius: 2px;
-      background-color: grey;
-      color: white;
-      font-weight: bold;
-      font-size: 1em;
+  ul {
+    margin-top: 0;
+
+    li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 15px;
+      width: 300px;
+      background-color: #fff;
+      box-shadow: rgba(128, 128, 128, 0.342) 2px 3px 18px 0px;
+      margin-bottom: 20px;
+      border-left: 15px solid orange;
+      text-align: left;
+      p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        letter-spacing: normal;
+      }
+      button {
+        border: none;
+        width: 35px;
+        height: 33px;
+        border-radius: 2px;
+        background-color: grey;
+        color: white;
+        font-weight: bold;
+        font-size: 1em;
+      }
     }
   }
 }

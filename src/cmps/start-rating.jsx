@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useState } from "react"
 
 const Star = ({ marked, starId }) => {
   return (
     <span data-star-id={starId} className="star" role="button">
       {marked ? "\u2605" : "\u2606"}
     </span>
-  );
-};
+  )
+}
 
 export function StarRating({ value }) {
-  const [rating, setRating] = useState(parseInt(value) || 0);
-  const [selection, setSelection] = useState(0);
+  const [rating, setRating] = useState(parseInt(value) || 0)
+  const [selection, setSelection] = useState(0)
 
   const hoverOver = (event) => {
-    let val = 0;
+    let val = 0
     if (event && event.target && event.target.getAttribute("data-star-id"))
-      val = event.target.getAttribute("data-star-id");
-    setSelection(val);
-  };
+      val = event.target.getAttribute("data-star-id")
+    setSelection(val)
+  }
   return (
     <div
       onMouseOut={() => hoverOver(null)}
@@ -34,5 +34,5 @@ export function StarRating({ value }) {
         />
       ))}
     </div>
-  );
+  )
 }
